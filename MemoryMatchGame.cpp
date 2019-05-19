@@ -124,20 +124,20 @@ void MemoryMatchGame::initAnswer(int theme) {
         allWords.erase(allWords.begin() + randIndex);
     }
 
-    //create a list to keep track of unused indeces, to keep everything O(n)
-    vector<int> indeces(numWords * 2);
-    for (int i = 0; i < indeces.size(); i++) {
-        indeces[i] = i;
+    //create a list to keep track of unused indices, to keep everything O(n)
+    vector<int> indices(numWords * 2);
+    for (int i = 0; i < indices.size(); i++) {
+        indices[i] = i;
     }
 
-    //randomly place each word in 2 unique indeces of the answer array
+    //randomly place each word in 2 unique indices of the answer array
     int randNum;
     answer = new string[numWords * 2];
     for (int i = 0; i < numWords; i++) {
         for (int j = 0; j < 2; j++) {
-            randNum = rand() % indeces.size();
-            randIndex = indeces[randNum];
-            indeces.erase(indeces.begin() + randNum);
+            randNum = rand() % indices.size();
+            randIndex = indices[randNum];
+            indices.erase(indices.begin() + randNum);
             answer[randIndex] = randomWords[i];
         }
     }
