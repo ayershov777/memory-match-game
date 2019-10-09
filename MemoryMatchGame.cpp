@@ -177,6 +177,7 @@ void MemoryMatchGame::drawGrid() {
     }
 }
 
+// helper function for draw grid
 char MemoryMatchGame::getCharacter(int i, int j) {
     int wordIndex = findIndex(i, j);
     j--;
@@ -196,6 +197,7 @@ char MemoryMatchGame::getCharacter(int i, int j) {
     return ' ';
 }
 
+// helper function for getCharacter
 int MemoryMatchGame::findIndex(int i, int j) {
     i--;
     i /= 2;
